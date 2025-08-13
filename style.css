@@ -52,3 +52,11 @@ html,body{
 .white{ color:var(--white); }
 .small{ font-size:12px; opacity:.8; margin-top:12px; color:var(--white); }
 code{ background:#111; padding:4px 6px; border-radius:4px; color:#9cf; font-size:0.95em; }
+
+/* Añadido para separar el contenido de los bordes y centrar texto */
+.center.column {
+  max-width: 600px;
+  padding: 0 20px;
+  text-align: center;
+}
+
