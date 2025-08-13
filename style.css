@@ -18,21 +18,17 @@ html,body{
 .center {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center; /* centra texto dentro */
+  justify-content: center;  /* centra horizontalmente */
+  align-items: center;      /* centra verticalmente */
+  text-align: center;       /* centra texto */
+  padding: 0 20px;          /* espacio a los lados */
 }
 
 .column {
-  flex-direction: column;
-  gap: 25px;
-}
-
-.center.column {
+  display: flex;
   flex-direction: column;
   gap: 25px;
   max-width: 600px;
-  padding: 0 20px;
   width: 100%;
 }
 
