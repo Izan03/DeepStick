@@ -1,0 +1,28 @@
+<script>
+function login() {
+  const user = document.getElementById('user').value;
+  const pass = document.getElementById('pass').value;
+
+  // 🔹 Lista de usuarios y contraseñas
+  const users = {
+    "admin": "1234",
+    "pepe": "abcd",
+    "maria": "qwerty",
+    "juan": "pass2025"
+  };
+
+  if (users[user] && users[user] === pass) {
+    sessionStorage.setItem('loggedIn', 'true');
+    sessionStorage.setItem('username', user);
+    window.location.href = "home.html";
+  } else {
+    alert('Usuario o contraseña incorrectos');
+  }
+}
+
+window.onload = function() {
+  if (sessionStorage.getItem('loggedIn') === 'true') {
+    window.location.href = "home.html";
+  }
+}
+</script>
