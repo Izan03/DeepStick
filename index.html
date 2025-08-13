@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Acceso a DeepStick</title>
+<meta charset="UTF-8" />
+<title>Login DeepStick</title>
 <style>
   body {
     font-family: Arial, sans-serif;
     background: #111;
-    color: #fff;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,22 +19,22 @@
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px black;
   }
   input {
     display: block;
     margin: 10px auto;
     padding: 8px;
-    width: 200px;
-    border: none;
+    width: 220px;
     border-radius: 5px;
+    border: none;
   }
   button {
-    padding: 8px 15px;
-    background: #4CAF50;
-    color: white;
+    background: #4caf50;
     border: none;
+    padding: 10px 15px;
     border-radius: 5px;
+    color: white;
     cursor: pointer;
   }
   button:hover {
@@ -43,26 +43,26 @@
 </style>
 </head>
 <body>
-<div id="loginForm">
-  <h2>Iniciar sesión</h2>
-  <input id="user" type="text" placeholder="Usuario">
-  <input id="pass" type="password" placeholder="Contraseña">
-  <button onclick="login()">Entrar</button>
-</div>
+  <div id="loginForm">
+    <h2>Iniciar sesión</h2>
+    <input id="user" type="text" placeholder="Usuario" />
+    <input id="pass" type="password" placeholder="Contraseña" />
+    <button onclick="login()">Entrar</button>
+  </div>
 
 <script>
 function login() {
-  const user = document.getElementById('user').value;
+  const user = document.getElementById('user').value.trim();
   const pass = document.getElementById('pass').value;
 
-  // 🔹 Lista de usuarios y contraseñas
   const users = {
     "admin": "1234",
     "pepe": "abcd",
-    "maria": "qwerty"
+    "maria": "qwerty",
+    "juan": "pass2025"
   };
 
-  if (users[user] && users[user] === pass) {
+  if (users.hasOwnProperty(user) && users[user] === pass) {
     sessionStorage.setItem('loggedIn', 'true');
     sessionStorage.setItem('username', user);
     window.location.href = "home.html";
@@ -79,3 +79,4 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
