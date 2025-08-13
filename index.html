@@ -1,3 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Acceso a DeepStick</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  #loginForm {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #000;
+  }
+  input {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+  }
+  button {
+    padding: 8px 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #45a049;
+  }
+</style>
+</head>
+<body>
+<div id="loginForm">
+  <h2>Iniciar sesión</h2>
+  <input id="user" type="text" placeholder="Usuario">
+  <input id="pass" type="password" placeholder="Contraseña">
+  <button onclick="login()">Entrar</button>
+</div>
+
 <script>
 function login() {
   const user = document.getElementById('user').value;
@@ -7,8 +59,7 @@ function login() {
   const users = {
     "admin": "1234",
     "pepe": "abcd",
-    "maria": "qwerty",
-    "juan": "pass2025"
+    "maria": "qwerty"
   };
 
   if (users[user] && users[user] === pass) {
@@ -26,3 +77,5 @@ window.onload = function() {
   }
 }
 </script>
+</body>
+</html>
